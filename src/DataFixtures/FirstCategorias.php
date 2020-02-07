@@ -6,17 +6,17 @@ use App\Entity\Categoria;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
-class PrimerasCategorias extends Fixture
+class FirstCategorias extends Fixture
 {
-    public function load(ObjectManager $manager)
-    {
-        $categorias = ["Programacion", "Cocina", "ajedrez", "Juegos"];
-        foreach ($categorias as $cat_nombre) {
+    public function load(ObjectManager $manager) {
+
+        $categorias = ["Programación", "Cocina", "Ajedrez", "Juegos", "Deportes", "Tapeo"];
+
+        foreach($categorias as $cat_nombre){
             $cat = new Categoria();
             $cat->setNombre($cat_nombre);
             $manager->persist($cat);
         }
-
 
         $manager->flush();
     }

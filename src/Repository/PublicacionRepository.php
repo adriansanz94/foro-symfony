@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Publicacion;
+use App\Entity\Publicación;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
- * @method Publicacion|null find($id, $lockMode = null, $lockVersion = null)
- * @method Publicacion|null findOneBy(array $criteria, array $orderBy = null)
- * @method Publicacion[]    findAll()
- * @method Publicacion[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Publicación|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Publicación|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Publicación[]    findAll()
+ * @method Publicación[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class PublicacionRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Publicacion::class);
+        parent::__construct($registry, Publicación::class);
     }
 
     // /**
-    //  * @return Publicacion[] Returns an array of Publicacion objects
+    //  * @return Publicación[] Returns an array of Publicación objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class PublicacionRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Publicacion
+    public function findOneBySomeField($value): ?Publicación
     {
         return $this->createQueryBuilder('p')
             ->andWhere('p.exampleField = :val')

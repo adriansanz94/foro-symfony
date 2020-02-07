@@ -24,13 +24,13 @@ class Categoria
     private $nombre;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Publicacion", mappedBy="Categoria")
+     * @ORM\OneToMany(targetEntity="App\Entity\Publicación", mappedBy="categoria")
      */
-    private $publicacions;
+    private $publicaciNs;
 
     public function __construct()
     {
-        $this->publicacions = new ArrayCollection();
+        $this->publicaciNs = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -51,33 +51,38 @@ class Categoria
     }
 
     /**
-     * @return Collection|Publicacion[]
+     * @return Collection|Publicación[]
      */
-    public function getPublicacions(): Collection
+    public function getPublicaciNs(): Collection
     {
-        return $this->publicacions;
+        return $this->publicaciNs;
     }
 
-    public function addPublicacion(Publicacion $publicacion): self
+    public function addPublicaciN(Publicación $publicaciN): self
     {
-        if (!$this->publicacions->contains($publicacion)) {
-            $this->publicacions[] = $publicacion;
-            $publicacion->setCategoria($this);
+        if (!$this->publicaciNs->contains($publicaciN)) {
+            $this->publicaciNs[] = $publicaciN;
+            $publicaciN->setCategoria($this);
         }
 
         return $this;
     }
 
-    public function removePublicacion(Publicacion $publicacion): self
+    public function removePublicaciN(Publicación $publicaciN): self
     {
-        if ($this->publicacions->contains($publicacion)) {
-            $this->publicacions->removeElement($publicacion);
+        if ($this->publicaciNs->contains($publicaciN)) {
+            $this->publicaciNs->removeElement($publicaciN);
             // set the owning side to null (unless already changed)
-            if ($publicacion->getCategoria() === $this) {
-                $publicacion->setCategoria(null);
+            if ($publicaciN->getCategoria() === $this) {
+                $publicaciN->setCategoria(null);
             }
         }
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->nombre;
     }
 }
