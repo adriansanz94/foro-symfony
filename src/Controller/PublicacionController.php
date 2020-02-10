@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Publicación;
 use App\Repository\PublicacionRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -26,22 +27,16 @@ class PublicacionController extends AbstractController
      * @Route("/publicacion/{id}", name="publicacion-detalle")
      */
 
-    public function detalle($id/*, PublicacionRepository $pr*/){
+   /* public function detalle($id , PublicacionRepository $pr){
 
         return $this->render('publicacion/detalle.html.twig', [
             'publicacion' => $id,
         ]);
-    }
-    /*public function detalle(Publicación $publicacion){
-
-        $publicacion = $pr->find($id);
-
-        if ($publicacion = null){
-            throw $this->createNotFoundException('Te has equivocado');
-        }
-
+    }*/
+    public function detalle(Publicación $publicacion)
+    {
         return $this->render('publicacion/detalle.html.twig', [
             'publicacion' => $publicacion
         ]);
-    }*/
+    }
 }

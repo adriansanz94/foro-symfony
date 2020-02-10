@@ -149,4 +149,8 @@ class Publicación
 
         return $this;
     }
+    public function __toString()
+    {
+        return $this->título;
+    }
 }
