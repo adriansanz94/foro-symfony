@@ -27,16 +27,16 @@ class PublicacionController extends AbstractController
      * @Route("/publicacion/{id}", name="publicacion-detalle")
      */
 
-   /* public function detalle($id , PublicacionRepository $pr){
+    public function detalle($id , PublicacionRepository $pr){
 
         return $this->render('publicacion/detalle.html.twig', [
-            'publicacion' => $id,
+            'publicacion' => $pr->find($id),
         ]);
-    }*/
-    public function detalle(Publicación $publicacion)
+    }
+    /*public function detalle(Publicación $publicacion)
     {
         return $this->render('publicacion/detalle.html.twig', [
             'publicacion' => $publicacion
         ]);
-    }
+    }*/
 }

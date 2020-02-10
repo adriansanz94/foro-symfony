@@ -49,6 +49,11 @@ class Publicación
      */
     private $comentarios;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="publicaciones")
+     */
+    private $Usuario;
+
     public function __construct()
     {
         $this->comentarios = new ArrayCollection();
@@ -152,5 +157,17 @@ class Publicación
     public function __toString()
     {
         return $this->título;
+    }
+
+    public function getUsuario(): ?User
+    {
+        return $this->Usuario;
+    }
+
+    public function setUsuario(?User $Usuario): self
+    {
+        $this->Usuario = $Usuario;
+
+        return $this;
     }
 }

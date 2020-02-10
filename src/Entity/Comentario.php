@@ -32,6 +32,11 @@ class Comentario
      */
     private $publicación;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="comentarios")
+     */
+    private $Usuario;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +74,18 @@ class Comentario
     public function setPublicación(?Publicación $publicación): self
     {
         $this->publicación = $publicación;
+
+        return $this;
+    }
+
+    public function getUsuario(): ?User
+    {
+        return $this->Usuario;
+    }
+
+    public function setUsuario(?User $Usuario): self
+    {
+        $this->Usuario = $Usuario;
 
         return $this;
     }
