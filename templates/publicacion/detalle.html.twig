@@ -15,7 +15,7 @@
     {{ publicacion.getTítulo }}<br>
     {{ publicacion.getContenido }}
     <ul>
-    {% for publicacion in publicacion.getComentarios %}
+    {% for comentario in publicacion.getComentarios %}
        <li> {{  comentario.getContenido }}</li>
     {% endfor %}
     </ul>
