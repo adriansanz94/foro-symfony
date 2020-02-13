@@ -12,7 +12,7 @@
         <img src="" alt="logo">
         <h1>Foro</h1>
         {%  if is_granted("ROLE_USER") %}
-            Hi{{  app.user.username }}<a href="/logout">desconectarse</a>
+            Hi<br>{{  app.user.username }}<br> <a href="/logout"> desconectarse </a>
          {% else %}
             <a href="/login">login</a>
         {% endif %}
